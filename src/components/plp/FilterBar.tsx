@@ -103,14 +103,28 @@ function ShapePopover({ shapes, selected, onApply }: { shapes: Shape[]; selected
   const [local, setLocal] = useState<Shape[]>(selected);
   return (
     <Popover label="Forme" active={selected.length > 0}>
-      <div className="grid grid-cols-3 gap-2">
-        {shapes.map((s) => (
-          <Chip key={s} active={local.includes(s)} icon={<ShapeIcon shape={s} className="h-4 w-4" />} onClick={() => setLocal((l) => (l.includes(s) ? l.filter((x) => x !== s) : [...l, s]))}>
-            {shapeLabels[s]}
-          </Chip>
-        ))}
-      </div>
-      <PopoverActions onClear={() => setLocal([])} onApply={() => onApply(local)} />
+      {(close) => (
+        <>
+          <div className="grid grid-cols-3 gap-2">
+            {shapes.map((s) => (
+              <Chip key={s} active={local.includes(s)} icon={<ShapeIcon shape={s} className="h-4 w-4" />} onClick={() => setLocal((l) => (l.includes(s) ? l.filter((x) => x !== s) : [...l, s]))}>
+                {shapeLabels[s]}
+              </Chip>
+            ))}
+          </div>
+          <PopoverActions
+            onClear={() => {
+              setLocal([]);
+              onApply([]);
+              close();
+            }}
+            onApply={() => {
+              onApply(local);
+              close();
+            }}
+          />
+        </>
+      )}
     </Popover>
   );
 }
@@ -119,21 +133,35 @@ function MetalPopover({ metals, selected, onApply }: { metals: Metal[]; selected
   const [local, setLocal] = useState<Metal[]>(selected);
   return (
     <Popover label="Métal" active={selected.length > 0}>
-      <div className="flex flex-col gap-3">
-        {metals.map((m) => (
-          <label key={m} className="flex min-h-[40px] cursor-pointer items-center gap-3 text-sm">
-            <input
-              type="checkbox"
-              checked={local.includes(m)}
-              onChange={() => setLocal((l) => (l.includes(m) ? l.filter((x) => x !== m) : [...l, m]))}
-              className="h-4 w-4"
-            />
-            <MetalSwatch metal={m} size="sm" />
-            {metalLabel[m]}
-          </label>
-        ))}
-      </div>
-      <PopoverActions onClear={() => setLocal([])} onApply={() => onApply(local)} />
+      {(close) => (
+        <>
+          <div className="flex flex-col gap-3">
+            {metals.map((m) => (
+              <label key={m} className="flex min-h-[40px] cursor-pointer items-center gap-3 text-sm">
+                <input
+                  type="checkbox"
+                  checked={local.includes(m)}
+                  onChange={() => setLocal((l) => (l.includes(m) ? l.filter((x) => x !== m) : [...l, m]))}
+                  className="h-4 w-4"
+                />
+                <MetalSwatch metal={m} size="sm" />
+                {metalLabel[m]}
+              </label>
+            ))}
+          </div>
+          <PopoverActions
+            onClear={() => {
+              setLocal([]);
+              onApply([]);
+              close();
+            }}
+            onApply={() => {
+              onApply(local);
+              close();
+            }}
+          />
+        </>
+      )}
     </Popover>
   );
 }
@@ -142,15 +170,29 @@ function PricePopover({ selected, onApply }: { selected: string; onApply: (v: st
   const [local, setLocal] = useState(selected);
   return (
     <Popover label="Prix" active={!!selected}>
-      <div className="flex flex-col gap-1">
-        {priceRanges.map((r) => (
-          <label key={r.value} className="flex min-h-[40px] cursor-pointer items-center gap-3 text-sm">
-            <input type="radio" name="prix" checked={local === r.value} onChange={() => setLocal(r.value)} className="h-4 w-4" />
-            {r.label}
-          </label>
-        ))}
-      </div>
-      <PopoverActions onClear={() => setLocal("")} onApply={() => onApply(local || null)} />
+      {(close) => (
+        <>
+          <div className="flex flex-col gap-1">
+            {priceRanges.map((r) => (
+              <label key={r.value} className="flex min-h-[40px] cursor-pointer items-center gap-3 text-sm">
+                <input type="radio" name="prix" checked={local === r.value} onChange={() => setLocal(r.value)} className="h-4 w-4" />
+                {r.label}
+              </label>
+            ))}
+          </div>
+          <PopoverActions
+            onClear={() => {
+              setLocal("");
+              onApply(null);
+              close();
+            }}
+            onApply={() => {
+              onApply(local || null);
+              close();
+            }}
+          />
+        </>
+      )}
     </Popover>
   );
 }

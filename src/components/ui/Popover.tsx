@@ -10,7 +10,7 @@ export function Popover({
 }: {
   label: ReactNode;
   active?: boolean;
-  children: ReactNode;
+  children: ReactNode | ((close: () => void) => ReactNode);
   align?: "left" | "right";
 }) {
   const [open, setOpen] = useState(false);
@@ -57,7 +57,7 @@ export function Popover({
             align === "left" ? "left-0" : "right-0",
           )}
         >
-          {children}
+          {typeof children === "function" ? children(() => setOpen(false)) : children}
         </div>
       )}
     </div>
