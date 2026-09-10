@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1250" viewBox="0 0 1000 1250">
+  <rect width="1000" height="1250" fill="#EFE9DD" />
+  <circle cx="500" cy="587.5" r="180" fill="none" stroke="#0E3B2E" stroke-width="16.2" opacity="0.35" />
+  <circle cx="500" cy="452.5" r="39.6" fill="#0E3B2E" opacity="0.4" />
+  <text x="500" y="1175" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#6B6B6B" letter-spacing="1">bracelet nova</text>
+</svg>
