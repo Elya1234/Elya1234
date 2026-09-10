@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Drawer } from "@/components/ui/Drawer";
 import { Chip } from "@/components/ui/Chip";
@@ -19,6 +19,11 @@ export function MobileFilterSort({ categorySlug, availableShapes, availableMetal
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [sheet, setSheet] = useState<"filter" | "sort" | null>(null);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty("--mobile-bar-offset", "52px");
+    return () => document.documentElement.style.setProperty("--mobile-bar-offset", "0px");
+  }, []);
 
   const currentFormes = (searchParams.get("forme")?.split(",").filter(Boolean) as Shape[]) ?? [];
   const currentMetaux = (searchParams.get("metal")?.split(",").filter(Boolean) as Metal[]) ?? [];

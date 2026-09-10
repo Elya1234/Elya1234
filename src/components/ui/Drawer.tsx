@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { cx } from "@/lib/utils";
 
@@ -18,6 +18,24 @@ export function Drawer({
   side?: "right" | "left" | "bottom";
   footer?: ReactNode;
 }) {
+  // Retire le panneau fermé de l'arbre d'accessibilité et de l'ordre de tabulation,
+  // tout en le laissant dans le DOM pour l'animation de fermeture.
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  const setRootRef = (el: HTMLDivElement | null) => {
+    rootRef.current = el;
+    if (el) {
+      if (open) el.removeAttribute("inert");
+      else el.setAttribute("inert", "");
+    }
+  };
+  useEffect(() => {
+    const el = rootRef.current;
+    if (el) {
+      if (open) el.removeAttribute("inert");
+      else el.setAttribute("inert", "");
+    }
+  }, [open]);
+
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = "hidden";
@@ -46,7 +64,7 @@ export function Drawer({
   }[side];
 
   return createPortal(
-    <div className={cx("fixed inset-0 z-[100]", !open && "pointer-events-none")}>
+    <div ref={setRootRef} className={cx("fixed inset-0 z-[100]", !open && "pointer-events-none")}>
       <div
         className={cx("absolute inset-0 bg-black/40 transition-opacity duration-300", open ? "opacity-100" : "opacity-0")}
         onClick={onClose}

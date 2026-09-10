@@ -35,22 +35,18 @@ export function ShopMap({
     <div className="grid gap-6 lg:grid-cols-[360px,1fr]">
       <ul className="flex flex-col divide-y divide-ligne border border-ligne">
         {filtered.map((shop) => (
-          <li key={shop.slug}>
-            <button
-              type="button"
-              onClick={() => setActive(shop.slug)}
-              className={cx("flex w-full flex-col items-start gap-1 p-4 text-left", active === shop.slug && "bg-ivoire")}
-            >
+          <li key={shop.slug} className={cx("p-4", active === shop.slug && "bg-ivoire")}>
+            <button type="button" onClick={() => setActive(shop.slug)} className="flex w-full flex-col items-start gap-1 text-left">
               <span className="font-serif text-lg">{shop.name}</span>
               <span className="text-sm text-gris-texte">
                 {shop.address}, {shop.postalCode}
               </span>
-              {linkToDetail && (
-                <Link href={`/boutiques/${shop.slug}`} className="underline-link mt-1 text-xs">
-                  Voir la boutique
-                </Link>
-              )}
             </button>
+            {linkToDetail && (
+              <Link href={`/boutiques/${shop.slug}`} className="underline-link mt-1 inline-block text-xs">
+                Voir la boutique
+              </Link>
+            )}
           </li>
         ))}
         {filtered.length === 0 && <li className="p-6 text-center text-sm text-gris-texte">Aucune boutique ne correspond à votre recherche.</li>}

@@ -6,6 +6,7 @@
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Jost", Helvetica, Arial, sans-serif;
   --font-script: "Tangerine", cursive;
+  --mobile-bar-offset: 0px;
 }
 
 * {

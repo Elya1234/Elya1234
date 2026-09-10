@@ -15,8 +15,8 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Gestion des cookies"
-      className="fixed inset-x-0 bottom-0 z-[150] border-t border-ligne bg-white p-5 shadow-popover"
-      style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 1.25rem)" }}
+      className="fixed inset-x-0 z-[150] border-t border-ligne bg-white p-5 shadow-popover"
+      style={{ bottom: "var(--mobile-bar-offset, 0px)", paddingBottom: "calc(env(safe-area-inset-bottom) + 1.25rem)" }}
     >
       <div className="mx-auto flex max-w-container flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:px-12">
         <p className="max-w-2xl text-xs text-gris-texte">

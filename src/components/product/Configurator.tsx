@@ -49,6 +49,11 @@ export function Configurator({ product }: { product: Product }) {
   const pushToast = useToastStore((s) => s.push);
 
   useEffect(() => {
+    document.documentElement.style.setProperty("--mobile-bar-offset", "84px");
+    return () => document.documentElement.style.setProperty("--mobile-bar-offset", "0px");
+  }, []);
+
+  useEffect(() => {
     const params = new URLSearchParams();
     if (options.metal) params.set("metal", options.metal);
     if (options.stoneOrigin) params.set("pierre", options.stoneOrigin);
