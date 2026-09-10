@@ -9,6 +9,7 @@ import { FloatingButtons } from "@/components/layout/FloatingButtons";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { ToastViewport } from "@/components/ui/ToastViewport";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -72,6 +73,7 @@ export default function RootLayout({
         <FloatingButtons />
         <CartDrawer />
         <ToastViewport />
+        <CookieBanner />
         <ScrollReveal />
       </body>
     </html>
