@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getShop, shops } from "@/lib/data/shops";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
+import { toTelHref } from "@/lib/utils";
 
 export function generateStaticParams() {
   return shops.map((s) => ({ slug: s.slug }));
@@ -49,7 +50,7 @@ export default function ShopPage({ params }: { params: { slug: string } }) {
             <br />
             {shop.postalCode}
           </p>
-          <a href={`tel:${shop.phone.replace(/\s/g, "")}`} className="mt-2 block underline-link text-sm">
+          <a href={toTelHref(shop.phone)} className="mt-2 block underline-link text-sm">
             {shop.phone}
           </a>
 

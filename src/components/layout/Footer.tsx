@@ -4,6 +4,7 @@ import Link from "next/link";
 import { brand } from "@/lib/data/brand";
 import { shops } from "@/lib/data/shops";
 import { cx } from "@/lib/utils";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 
 const columns = [
   {
@@ -92,8 +93,8 @@ export function Footer() {
         <div className="flex flex-col gap-6 border-t border-white/15 pt-8 lg:flex-row lg:items-center lg:justify-between">
           <p className="font-serif text-2xl">{brand.shortName}</p>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.08em] text-white/70">
-            <button type="button" className="hover:text-white">FR ▾</button>
-            <button type="button" className="hover:text-white">France (€) ▾</button>
+            <LocaleSwitcher kind="lang" triggerClassName="hover:text-white" direction="up" />
+            <LocaleSwitcher kind="region" triggerClassName="hover:text-white" direction="up" />
           </div>
           <div className="flex items-center gap-4">
             <a href={brand.social.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">

@@ -48,6 +48,16 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
    correspondante dans la barre de filtres. Vérifié : un audit de tous les liens internes du site
    (53 liens uniques sur 23 pages) ne remonte plus aucun lien mort, et chaque lien de catégorie mène
    bien aux produits attendus (bagues → bagues, colliers → colliers, etc.).
+5. **Sélecteurs de langue/devise décoratifs** : les boutons « FR ▾ » et « France (€) ▾ » du header,
+   du footer et du menu mobile n'avaient aucun `onClick` — ils ne faisaient rigoureusement rien.
+   Comme le site n'est réellement disponible qu'en français, une vraie prise en charge multilingue
+   serait mensongère. Remplacés par un composant `LocaleSwitcher` (`src/components/layout/`)
+   réellement interactif : il s'ouvre, affiche l'option active (« Français » / « France (€) ») et les
+   options à venir marquées « Bientôt », plutôt que de prétendre offrir un choix qui n'existe pas.
+6. **Format de téléphone incohérent** : le lien `tel:` des pages boutique utilisait le format
+   national français (`tel:0478224015`), différent du reste du site (`tel:+33142335510`). Le format
+   international E.164 est le seul fiable sur tous les téléphones et pays ; ajout d'un utilitaire
+   `toTelHref()` (`src/lib/utils.ts`) pour uniformiser.
 
 ## Marque et contenu
 

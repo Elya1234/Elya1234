@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { navItems } from "@/lib/data/nav";
 import { brand } from "@/lib/data/brand";
 import { cx } from "@/lib/utils";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 
 export function MobileNavDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -75,9 +76,7 @@ export function MobileNavDrawer({ open, onClose }: { open: boolean; onClose: () 
         <a href={brand.phoneHref} className="flex min-h-[44px] items-center gap-3">
           Nous contacter — {brand.phone}
         </a>
-        <button type="button" className="flex min-h-[44px] items-center gap-3 text-left">
-          FR ▾ — Français
-        </button>
+        <LocaleSwitcher kind="lang" className="w-fit" triggerClassName="flex min-h-[44px] items-center gap-2 text-left" />
       </div>
     </Drawer>
   );

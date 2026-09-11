@@ -26,3 +26,11 @@ export function slugify(value: string): string {
 export function cx(...classes: Array<string | false | null | undefined>): string {
   return classes.filter(Boolean).join(" ");
 }
+
+/** Convertit un numéro français au format national ("01 42 33 55 10") en lien tel: au format
+ * international E.164 ("tel:+33142335510"), seul format fiable sur tous les téléphones/pays. */
+export function toTelHref(phone: string, countryCode = "33"): string {
+  const digits = phone.replace(/\D/g, "");
+  const national = digits.startsWith("0") ? digits.slice(1) : digits;
+  return `tel:+${countryCode}${national}`;
+}

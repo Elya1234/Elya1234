@@ -7,6 +7,7 @@ import { cx } from "@/lib/utils";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import { MobileNavDrawer } from "@/components/layout/MobileNavDrawer";
 import { SearchOverlay } from "@/components/layout/SearchOverlay";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 import { useCartStore } from "@/lib/store/cart";
 import { useWishlistStore } from "@/lib/store/wishlist";
 
@@ -43,9 +44,7 @@ export function Header() {
         {!condensed && (
           <div className="mx-auto hidden max-w-container items-center justify-between px-6 lg:flex lg:px-12">
             <div className="flex items-center gap-5 text-xs uppercase tracking-[0.08em] text-gris-texte">
-              <button type="button" className="hover:text-noir-texte">
-                FR ▾
-              </button>
+              <LocaleSwitcher kind="lang" />
               <Link href="/boutiques" className="hover:text-noir-texte">
                 Nos boutiques
               </Link>
