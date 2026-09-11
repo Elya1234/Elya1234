@@ -58,6 +58,14 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
    national français (`tel:0478224015`), différent du reste du site (`tel:+33142335510`). Le format
    international E.164 est le seul fiable sur tous les téléphones et pays ; ajout d'un utilitaire
    `toTelHref()` (`src/lib/utils.ts`) pour uniformiser.
+7. **Bouton « S'inscrire » de la newsletter invisible** (texte blanc sur fond blanc) : le composant
+   `Button` recevait des couleurs de substitution via `className` (`bg-white text-bleu-roi`), mais
+   l'ordre du CSS Tailwind compilé ne suit pas l'ordre des classes dans le JSX — la couleur de texte
+   blanche du variant `primary` gagnait sur la surcharge. Repéré visuellement lors de la revue de
+   l'accueil. Corrigé en ajoutant deux vrais variants à `Button` (`light`, `outlineLight`) au lieu de
+   bricoler les couleurs par surcharge — plus fiable et réutilisé pour les boutons « Prendre RDV »
+   sur fond coloré. Au passage, la couleur de survol du bouton `primary` était restée un vert
+   (`#0a2e23`) oublié lors du changement de palette ; corrigée en bleu roi foncé (`#12204a`).
 
 ## Marque et contenu
 

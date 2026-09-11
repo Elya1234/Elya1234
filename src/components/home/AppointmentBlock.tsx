@@ -13,7 +13,7 @@ export function AppointmentBlock() {
           Nos joailliers-conseil vous accompagnent en boutique, par téléphone ou en visioconférence pour composer la pièce qui vous correspond.
         </p>
         <div className="mt-6">
-          <Button href="/rendez-vous" variant="secondary" className="border-white text-white hover:bg-white hover:text-orange-rose-texte">
+          <Button href="/rendez-vous" variant="outlineLight">
             Prendre rendez-vous
           </Button>
         </div>

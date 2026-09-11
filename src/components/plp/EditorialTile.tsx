@@ -8,7 +8,7 @@ export function EditorialTile() {
         Prenez rendez-vous avec l&apos;un de nos experts, en boutique ou en ligne.
       </p>
       <div className="mt-4">
-        <Button href="/rendez-vous" variant="secondary" className="border-white text-white hover:bg-white hover:text-orange-rose-texte">
+        <Button href="/rendez-vous" variant="outlineLight">
           Prendre RDV
         </Button>
       </div>
