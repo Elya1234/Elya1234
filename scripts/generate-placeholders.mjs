@@ -14,16 +14,18 @@ function hash(str) {
   return h;
 }
 
-function svg(name, w, h, label) {
+// Le texte n'est jamais dessiné dans l'image : chaque composant qui affiche ces
+// placeholders superpose déjà sa propre légende (mega-menu, vignettes de catégorie, etc.),
+// et un texte intégré à l'image créait un doublon illisible derrière la vraie légende.
+function svg(name, w, h) {
   const c = PALETTE[hash(name) % PALETTE.length];
   const ringR = Math.min(w, h) * 0.18;
   const cx = w / 2;
-  const cy = h / 2 - h * 0.03;
+  const cy = h / 2;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
   <rect width="${w}" height="${h}" fill="${c}" />
   <circle cx="${cx}" cy="${cy}" r="${ringR}" fill="none" stroke="#1A2A63" stroke-width="${Math.max(2, ringR * 0.09)}" opacity="0.35" />
   <circle cx="${cx}" cy="${cy - ringR * 0.75}" r="${ringR * 0.22}" fill="#1A2A63" opacity="0.4" />
-  <text x="${w / 2}" y="${h - h * 0.06}" text-anchor="middle" font-family="Georgia, serif" font-size="${Math.max(11, w * 0.028)}" fill="#6B6B6B" letter-spacing="1">${label}</text>
 </svg>`;
 }
 

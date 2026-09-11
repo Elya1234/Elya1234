@@ -123,6 +123,24 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
     Le bloc `AppointmentBlock.tsx` (RDV en 2 colonnes) devenait redondant avec `BoutiquesSection`
     et a été supprimé. Vérifié par capture d'écran (desktop et mobile 390px, aucun débordement
     horizontal) et par le script de fumée (18/20, stable).
+14. **Texte doublé et illisible sur les vignettes photo du méga-menu** : trouvé en contrôlant le
+    menu « Bagues de fiançailles ». Les images placeholder (`scripts/generate-placeholders.mjs`)
+    dessinaient leur propre légende directement dans le SVG (ex. « Bagues de fiançailles »), alors
+    que chaque composant qui affiche ces images (méga-menu, vignettes de catégorie, recherche…)
+    superpose déjà sa propre légende par-dessus (ex. « Nouveautés »). Les deux textes se
+    chevauchaient, illisibles — c'est ce que le client décrivait comme « une petite photo … pas
+    trop claire ». Corrigé en retirant le texte intégré aux SVG générés (55 fichiers régénérés) :
+    chaque image ne porte plus qu'une seule légende, la vraie, celle du composant. Vérifié par
+    capture d'écran du méga-menu ouvert.
+15. **Police des titres trop fine, icônes de réassurance en emoji** : sur demande du client d'une
+    police « plus luxueuse », vérifié que Cormorant Garamond se chargeait bien (elle se chargeait :
+    pas un problème de police manquante) mais son poids par défaut (400) rendait les grands titres
+    fins et peu présents. Ajout d'une règle globale portant `h1/h2/h3` à 500 quand aucun poids
+    explicite n'est déjà fixé (`globals.css`), pour un rendu plus « haute joaillerie » sans toucher
+    aux composants un par un. Remplacé aussi les 4 emoji de la barre de réassurance (🚚 ↩ ✎ 🔒),
+    peu cohérents entre systèmes et peu qualitatifs, par des icônes trait fines dans le même style
+    que le reste du site. Vérifié par capture d'écran (desktop et mobile) et par lecture du poids
+    de police calculé (400 → 500 sur le `<h1>`).
 
 ## Marque et contenu
 

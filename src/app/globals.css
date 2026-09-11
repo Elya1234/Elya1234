@@ -32,6 +32,16 @@ body {
   font-size: 16px;
 }
 
+/* Cormorant Garamond en 400 (le poids par défaut) est trop fin pour les grands titres et
+   manque de richesse visuelle. Les titres qui ne fixent pas déjà un poids explicite (font-medium,
+   font-semibold…) passent en 500 pour un rendu plus haute-joaillerie, sans classe Tailwind à
+   surcharger (l'ordre du CSS compilé ne suit pas l'ordre du JSX, cf. DECISIONS.md). */
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
 ::selection {
   background: #1a2a63;
   color: #faf8f5;

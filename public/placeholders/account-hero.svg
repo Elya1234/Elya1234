@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400" viewBox="0 0 1000 1400">
   <rect width="1000" height="1400" fill="#EDEAE3" />
-  <circle cx="500" cy="658" r="180" fill="none" stroke="#1A2A63" stroke-width="16.2" opacity="0.35" />
-  <circle cx="500" cy="523" r="39.6" fill="#1A2A63" opacity="0.4" />
-  <text x="500" y="1316" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#6B6B6B" letter-spacing="1">Elya Joaillerie</text>
+  <circle cx="500" cy="700" r="180" fill="none" stroke="#1A2A63" stroke-width="16.2" opacity="0.35" />
+  <circle cx="500" cy="565" r="39.6" fill="#1A2A63" opacity="0.4" />
 </svg>

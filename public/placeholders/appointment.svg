@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
   <rect width="1200" height="900" fill="#EDEAE3" />
-  <circle cx="600" cy="423" r="162" fill="none" stroke="#1A2A63" stroke-width="14.58" opacity="0.35" />
-  <circle cx="600" cy="301.5" r="35.64" fill="#1A2A63" opacity="0.4" />
-  <text x="600" y="846" text-anchor="middle" font-family="Georgia, serif" font-size="33.6" fill="#6B6B6B" letter-spacing="1">Rendez-vous</text>
+  <circle cx="600" cy="450" r="162" fill="none" stroke="#1A2A63" stroke-width="14.58" opacity="0.35" />
+  <circle cx="600" cy="328.5" r="35.64" fill="#1A2A63" opacity="0.4" />
 </svg>

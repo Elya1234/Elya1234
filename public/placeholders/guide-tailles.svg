@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <rect width="1200" height="800" fill="#EDEAE3" />
-  <circle cx="600" cy="376" r="144" fill="none" stroke="#1A2A63" stroke-width="12.959999999999999" opacity="0.35" />
-  <circle cx="600" cy="268" r="31.68" fill="#1A2A63" opacity="0.4" />
-  <text x="600" y="752" text-anchor="middle" font-family="Georgia, serif" font-size="33.6" fill="#6B6B6B" letter-spacing="1">Guide des tailles</text>
+  <circle cx="600" cy="400" r="144" fill="none" stroke="#1A2A63" stroke-width="12.959999999999999" opacity="0.35" />
+  <circle cx="600" cy="292" r="31.68" fill="#1A2A63" opacity="0.4" />
 </svg>
