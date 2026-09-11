@@ -66,6 +66,10 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
    bricoler les couleurs par surcharge — plus fiable et réutilisé pour les boutons « Prendre RDV »
    sur fond coloré. Au passage, la couleur de survol du bouton `primary` était restée un vert
    (`#0a2e23`) oublié lors du changement de palette ; corrigée en bleu roi foncé (`#12204a`).
+8. **Carrousels « Alliances » et « Nouveautés » trop clairsemés** : avec seulement 2 alliances et
+   3 nouveautés en catalogue, ces rangées laissaient un grand vide à droite sur desktop — pas digne
+   d'un site abouti. Ajout de deux alliances (« Alliance Camille », « Alliance Hugo ») pour porter
+   le catalogue à 4 pièces par carrousel, comme « Bagues de fiançailles ».
 
 ## Marque et contenu
 

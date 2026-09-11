@@ -35,6 +35,8 @@ const productSlugs = [
   "bague-victoire",
   "alliance-suzanne",
   "alliance-marceau",
+  "alliance-camille",
+  "alliance-hugo",
   "collier-cleo",
   "boucles-iris",
   "bracelet-nova",
