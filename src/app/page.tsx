@@ -8,7 +8,10 @@ import { ProductCarousel } from "@/components/home/ProductCarousel";
 import { EditorialGift } from "@/components/home/EditorialGift";
 import { TrustSection } from "@/components/home/TrustSection";
 import { Reviews } from "@/components/home/Reviews";
-import { AppointmentBlock } from "@/components/home/AppointmentBlock";
+import { CollectionsScroller } from "@/components/home/CollectionsScroller";
+import { BoutiquesSection } from "@/components/home/BoutiquesSection";
+import { AVosCotesSection } from "@/components/home/AVosCotesSection";
+import { SocialQuote } from "@/components/home/SocialQuote";
 import { Newsletter } from "@/components/home/Newsletter";
 import { products } from "@/lib/data/products";
 
@@ -34,8 +37,11 @@ export default function Home() {
       <ProductCarousel title="Nouveautés" seeAllHref="/bijoux/bagues-de-fiancailles?tri=nouveautes" products={newArrivals} />
       <EditorialGift />
       <TrustSection />
+      <CollectionsScroller />
+      <BoutiquesSection />
+      <AVosCotesSection />
+      <SocialQuote />
       <Reviews />
-      <AppointmentBlock />
       <Newsletter />
     </>
   );

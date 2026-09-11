@@ -68,6 +68,8 @@ items.push({ file: "guide-tailles.svg", w: 1200, h: 800, label: "Guide des taill
 items.push({ file: "guide-entretien.svg", w: 1200, h: 800, label: "Entretien" });
 items.push({ file: "guide-synthese.svg", w: 1200, h: 800, label: "Naturel vs synthèse" });
 items.push({ file: "account-hero.svg", w: 1000, h: 1400, label: "Elya Joaillerie" });
+items.push({ file: "a-vos-cotes.svg", w: 1600, h: 900, label: "À vos côtés" });
+items.push({ file: "instagram-elya.svg", w: 900, h: 1100, label: "@elya_joaillerie" });
 
 for (const it of items) {
   writeFileSync(join(OUT, it.file), svg(it.file, it.w, it.h, it.label), "utf8");

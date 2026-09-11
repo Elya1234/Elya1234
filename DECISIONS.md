@@ -100,6 +100,29 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
     d'écran (formulaire de commande visible, badge panier « 1 » correct) et par le script de
     fumée, passé de 16/20 à 18/20 (ce bug perturbait aussi le flux de rendez-vous et la newsletter,
     qui rouvraient le même tiroir par-dessus leurs propres éléments).
+13. **Structure du bas de l'accueil absente** : le client a fourni une capture vidéo de sacet.com
+    montrant la structure attendue en bas de la page d'accueil (analysée image par image via
+    ffmpeg). Cette structure — pas les photos, mais l'agencement — manquait entièrement de notre
+    page d'accueil. Ajout de 4 nouvelles sections reproduisant fidèlement cet agencement, dans nos
+    couleurs (bleu roi / ivoire / doré) :
+    - `CollectionsScroller.tsx` : bandeau plein écran bleu roi listant les collections en grand
+      serif empilé, avec mise en évidence de la collection actuellement au centre de l'écran au
+      défilement (IntersectionObserver), le reste atténué — comme le bloc « NOS COLLECTIONS » de
+      la référence.
+    - `BoutiquesSection.tsx` : en-tête « Rencontrons-nous » avec filet, sous-titre « Nos
+      boutiques », description, liste de villes (liens réels vers `/boutiques/[slug]`), bouton
+      « Réserver un rendez-vous », et un mini-carrousel photo des boutiques avec flèches
+      précédent/suivant — reproduisant le bloc boutiques de la référence.
+    - `AVosCotesSection.tsx` : en-tête « À vos côtés » avec filet, bannière photo, puis une grille
+      de 4 cartes de contact (Téléphone, Email, Rendez-vous, Assistance), chacune avec icône,
+      titre en petites capitales et lien fonctionnel (`tel:`, `mailto:`, `/rendez-vous`,
+      `/contact`) — reproduisant la grille de contact de la référence.
+    - `SocialQuote.tsx` : bloc Instagram (photo + « @elya_joaillerie » + lien vers le compte) puis
+      citation de marque en italique — reproduisant le bloc réseaux sociaux + citation de la
+      référence.
+    Le bloc `AppointmentBlock.tsx` (RDV en 2 colonnes) devenait redondant avec `BoutiquesSection`
+    et a été supprimé. Vérifié par capture d'écran (desktop et mobile 390px, aucun débordement
+    horizontal) et par le script de fumée (18/20, stable).
 
 ## Marque et contenu
 

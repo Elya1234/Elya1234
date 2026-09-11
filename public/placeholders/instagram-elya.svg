@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <rect width="900" height="1100" fill="#EFE9DD" />
+  <circle cx="450" cy="517" r="162" fill="none" stroke="#1A2A63" stroke-width="14.58" opacity="0.35" />
+  <circle cx="450" cy="395.5" r="35.64" fill="#1A2A63" opacity="0.4" />
+  <text x="450" y="1034" text-anchor="middle" font-family="Georgia, serif" font-size="25.2" fill="#6B6B6B" letter-spacing="1">@elya_joaillerie</text>
+</svg>
