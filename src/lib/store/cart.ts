@@ -46,6 +46,6 @@ export const useCartStore = create<CartState>()(
       subtotal: () => get().lines.reduce((sum, l) => sum + l.unitPrice * l.quantity, 0),
       count: () => get().lines.reduce((sum, l) => sum + l.quantity, 0),
     }),
-    { name: "elya-cart" },
+    { name: "elya-cart", partialize: (state) => ({ lines: state.lines }) },
   ),
 );

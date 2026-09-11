@@ -91,6 +91,15 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
     alignées sur le même langage visuel (bague à facettes, diamants ovales à facettes avec table,
     diamant de synthèse marqué d'une étincelle). Vérifié par capture d'écran : les 10 formes du
     sélecteur et les 3 icônes de la page d'accueil s'affichent nettement, sans artefact de rendu.
+12. **Panier qui se rouvrait par-dessus la page de commande** : l'état `isOpen` du tiroir panier
+    était persisté dans `localStorage` avec les lignes du panier (`src/lib/store/cart.ts`). En
+    quittant le site avec le tiroir ouvert, il se rouvrait automatiquement au chargement suivant
+    et recouvrait entièrement la page — y compris `/commander`, où il masquait le formulaire de
+    livraison. Corrigé avec `partialize` pour ne persister que les lignes du panier, jamais l'état
+    d'ouverture du tiroir (redevient fermé à chaque nouveau chargement). Vérifié par capture
+    d'écran (formulaire de commande visible, badge panier « 1 » correct) et par le script de
+    fumée, passé de 16/20 à 18/20 (ce bug perturbait aussi le flux de rendez-vous et la newsletter,
+    qui rouvraient le même tiroir par-dessus leurs propres éléments).
 
 ## Marque et contenu
 
