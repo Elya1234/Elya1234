@@ -23,6 +23,8 @@ export interface CategoryRef {
   label: string;
 }
 
+export type JewelryType = "collier" | "bracelet" | "boucles" | "bague";
+
 export interface ProductOptionPricing {
   metal: Record<Metal, number>;
   stoneOrigin: Record<StoneOrigin, number>;
@@ -37,6 +39,7 @@ export interface Product {
   name: string;
   subtitle: string;
   category: CategoryRef;
+  jewelryType: JewelryType;
   shapes: Shape[];
   metals: Metal[];
   isNew?: boolean;

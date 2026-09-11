@@ -1,10 +1,11 @@
-import type { Metal, Product, Shape } from "@/lib/types";
+import type { JewelryType, Metal, Product, Shape } from "@/lib/types";
 
 export type SortKey = "recommandes" | "nouveautes" | "prix-asc" | "prix-desc";
 
 export interface ParsedFilters {
   formes: Shape[];
   metaux: Metal[];
+  types: JewelryType[];
   prixMin?: number;
   prixMax?: number;
   tri: SortKey;
@@ -13,6 +14,7 @@ export interface ParsedFilters {
 export function parseFilters(searchParams: Record<string, string | string[] | undefined>): ParsedFilters {
   const forme = firstOf(searchParams.forme);
   const metal = firstOf(searchParams.metal);
+  const type = firstOf(searchParams.type);
   const prix = firstOf(searchParams.prix);
   const tri = firstOf(searchParams.tri);
 
@@ -21,6 +23,7 @@ export function parseFilters(searchParams: Record<string, string | string[] | un
   return {
     formes: forme ? (forme.split(",") as Shape[]) : [],
     metaux: metal ? (metal.split(",") as Metal[]) : [],
+    types: type ? (type.split(",") as JewelryType[]) : [],
     prixMin: prixMinStr ? Number(prixMinStr) : undefined,
     prixMax: prixMaxStr ? Number(prixMaxStr) : undefined,
     tri: (["recommandes", "nouveautes", "prix-asc", "prix-desc"].includes(tri ?? "") ? tri : "recommandes") as SortKey,
@@ -39,6 +42,9 @@ export function applyFilters(products: Product[], filters: ParsedFilters): Produ
   }
   if (filters.metaux.length) {
     result = result.filter((p) => p.metals.some((m) => filters.metaux.includes(m)));
+  }
+  if (filters.types.length) {
+    result = result.filter((p) => filters.types.includes(p.jewelryType));
   }
   if (filters.prixMin !== undefined) {
     result = result.filter((p) => p.basePrice >= filters.prixMin!);

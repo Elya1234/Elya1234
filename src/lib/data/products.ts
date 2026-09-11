@@ -1,4 +1,4 @@
-import type { Certificate, Clarity, ColorGrade, Metal, Product, ProductOptionPricing, Shape } from "@/lib/types";
+import type { Certificate, Clarity, ColorGrade, JewelryType, Metal, Product, ProductOptionPricing, Shape } from "@/lib/types";
 
 const CARAT_STEPS = ["0.20", "0.30", "0.40", "0.50", "0.60", "0.70", "0.80", "0.90", "1.00", "1.20", "1.50", "1.70", "2.00", "2.50", "3.00"];
 const CLARITIES: Clarity[] = ["VVS1", "VVS2", "VS1", "VS2", "SI1"];
@@ -52,6 +52,7 @@ function product(input: {
   subtitle: string;
   categorySlug: string;
   categoryLabel: string;
+  jewelryType: JewelryType;
   shapes: Shape[];
   metals: Metal[];
   isNew?: boolean;
@@ -65,6 +66,7 @@ function product(input: {
     name: input.name,
     subtitle: input.subtitle,
     category: { slug: input.categorySlug, label: input.categoryLabel },
+    jewelryType: input.jewelryType,
     shapes: input.shapes,
     metals: input.metals,
     isNew: input.isNew,
@@ -97,6 +99,7 @@ export const products: Product[] = [
     subtitle: "Solitaire, monture six griffes",
     categorySlug: "bagues-de-fiancailles",
     categoryLabel: "Bagues de fiançailles",
+    jewelryType: "bague",
     shapes: ["rond", "ovale", "coussin"],
     metals: ["or-jaune", "or-blanc", "or-rose", "platine"],
     isNew: true,
@@ -111,6 +114,7 @@ export const products: Product[] = [
     subtitle: "Halo pavé, anneau fin",
     categorySlug: "bagues-de-fiancailles",
     categoryLabel: "Bagues de fiançailles",
+    jewelryType: "bague",
     shapes: ["ovale", "poire", "coussin", "emeraude"],
     metals: ["or-jaune", "or-blanc", "or-rose"],
     basePrice: 1590,
@@ -124,6 +128,7 @@ export const products: Product[] = [
     subtitle: "Trilogie, taille émeraude",
     categorySlug: "bagues-de-fiancailles",
     categoryLabel: "Bagues de fiançailles",
+    jewelryType: "bague",
     shapes: ["emeraude", "radiant", "asscher"],
     metals: ["or-blanc", "platine"],
     isNew: true,
@@ -138,6 +143,7 @@ export const products: Product[] = [
     subtitle: "Anneau uni 2,5 mm",
     categorySlug: "alliances",
     categoryLabel: "Alliances",
+    jewelryType: "bague",
     shapes: ["rond"],
     metals: ["or-jaune", "or-blanc", "or-rose", "platine"],
     basePrice: 490,
@@ -150,6 +156,7 @@ export const products: Product[] = [
     subtitle: "Pavage mi-tour",
     categorySlug: "alliances",
     categoryLabel: "Alliances",
+    jewelryType: "bague",
     shapes: ["rond"],
     metals: ["or-jaune", "or-blanc", "platine"],
     basePrice: 890,
@@ -162,6 +169,7 @@ export const products: Product[] = [
     subtitle: "Pendentif rond, chaîne fine",
     categorySlug: "joaillerie",
     categoryLabel: "Joaillerie",
+    jewelryType: "collier",
     shapes: ["rond"],
     metals: ["or-jaune", "or-rose"],
     basePrice: 690,
@@ -175,6 +183,7 @@ export const products: Product[] = [
     subtitle: "Puces, taille ovale",
     categorySlug: "joaillerie",
     categoryLabel: "Joaillerie",
+    jewelryType: "boucles",
     shapes: ["ovale", "rond"],
     metals: ["or-jaune", "or-blanc", "or-rose"],
     isNew: true,
@@ -189,6 +198,7 @@ export const products: Product[] = [
     subtitle: "Rivière 5 pierres",
     categorySlug: "joaillerie",
     categoryLabel: "Joaillerie",
+    jewelryType: "bracelet",
     shapes: ["rond", "coussin"],
     metals: ["or-blanc", "platine"],
     basePrice: 1890,
@@ -202,6 +212,7 @@ export const products: Product[] = [
     subtitle: "Solitaire torsadé",
     categorySlug: "bagues-de-fiancailles",
     categoryLabel: "Bagues de fiançailles",
+    jewelryType: "bague",
     shapes: ["rond", "ovale"],
     metals: ["or-jaune", "or-rose"],
     basePrice: 1450,

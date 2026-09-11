@@ -40,6 +40,14 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
 3. **Mega-menu mal positionné** : ancré en position fixe avec un décalage en pixels codé en dur, il
    recouvrait la ligne de navigation au lieu de s'ouvrir juste en dessous. Corrigé en l'ancrant en
    position absolue au conteneur `<nav>` (`top-full`) plutôt qu'au viewport.
+4. **Liens « Colliers / Bracelets / Boucles d'oreilles » du méga-menu non fonctionnels** : ils
+   pointaient vers `/bijoux/joaillerie?type=collier` (etc.) mais ce paramètre `type` n'était lu par
+   aucun code — la page affichait tous les articles de joaillerie mélangés. Corrigé en ajoutant un
+   champ `jewelryType` au modèle produit (`src/lib/types.ts`, `src/lib/data/products.ts`) et en
+   filtrant réellement sur ce paramètre (`src/lib/filters.ts`), avec une puce de filtre actif
+   correspondante dans la barre de filtres. Vérifié : un audit de tous les liens internes du site
+   (53 liens uniques sur 23 pages) ne remonte plus aucun lien mort, et chaque lien de catégorie mène
+   bien aux produits attendus (bagues → bagues, colliers → colliers, etc.).
 
 ## Marque et contenu
 

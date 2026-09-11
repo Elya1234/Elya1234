@@ -54,6 +54,7 @@ export default function CategoryPage({
     const params = new URLSearchParams();
     if (filters.formes.length) params.set("forme", filters.formes.join(","));
     if (filters.metaux.length) params.set("metal", filters.metaux.join(","));
+    if (filters.types.length) params.set("type", filters.types.join(","));
     if (filters.prixMin !== undefined || filters.prixMax !== undefined) params.set("prix", `${filters.prixMin ?? 0}-${filters.prixMax ?? 999999}`);
     if (filters.tri !== "recommandes") params.set("tri", filters.tri);
     if (p > 1) params.set("page", String(p));
