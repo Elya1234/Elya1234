@@ -81,6 +81,16 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
     de la recherche affichaient la même image (« bagues ») pour les trois catégories, y compris
     Alliances et Joaillerie. Ajout d'un champ `image` par catégorie dans
     `src/lib/data/categories.ts` (source unique), chacune affichant désormais son propre visuel.
+11. **Icônes de forme de pierre trop plates** : les pictogrammes de `ShapeIcon.tsx` (sélecteur de
+    forme, configurateur, filtres PLP) et les 3 icônes de `StartCards.tsx` (page d'accueil,
+    section « Imaginons votre création ») n'étaient que des contours pleins sans aucune ligne de
+    taille. Sur demande explicite du client (capture vidéo de référence sacet.com), les 10 formes
+    (rond, princesse, coussin, émeraude, poire, ovale, radiant, marquise, cœur, asscher) ont été
+    redessinées en véritables pierres à facettes : silhouette + table centrale + lignes de taille
+    rayonnantes, dans le style du site de référence. Les 3 icônes de `StartCards.tsx` ont été
+    alignées sur le même langage visuel (bague à facettes, diamants ovales à facettes avec table,
+    diamant de synthèse marqué d'une étincelle). Vérifié par capture d'écran : les 10 formes du
+    sélecteur et les 3 icônes de la page d'accueil s'affichent nettement, sans artefact de rendu.
 
 ## Marque et contenu
 

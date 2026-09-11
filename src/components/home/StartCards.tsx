@@ -6,9 +6,10 @@ const cards = [
     text: "Solitaire, halo ou trilogie : composez la monture qui vous ressemble, en or ou en platine.",
     href: "/bijoux/bagues-de-fiancailles",
     icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="24" r="11" stroke="currentColor" strokeWidth="1.3" />
-        <path d="M14 13l6-7 6 7" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="0.9" strokeLinejoin="round" strokeLinecap="round" aria-hidden="true">
+        <circle cx="20" cy="25" r="10" />
+        <path d="M16.5 15L20 6L23.5 15Z" />
+        <path d="M16.5 15L23.5 15M20 6L20 15M18.2 10.2L21.8 10.2" />
       </svg>
     ),
   },
@@ -17,9 +18,10 @@ const cards = [
     text: "Une pierre extraite, sélectionnée avec exigence et accompagnée d'un certificat GIA ou IGI.",
     href: "/guides/naturel-vs-synthese",
     icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M10 15h20l-10 18-10-18Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-        <path d="M10 15l4-6h12l4 6" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="0.9" strokeLinejoin="round" strokeLinecap="round" aria-hidden="true">
+        <ellipse cx="20" cy="20" rx="10.5" ry="14" />
+        <ellipse cx="20" cy="20" rx="4.2" ry="5.6" />
+        <path d="M30.5 20L24.2 20M27.42 29.9L22.97 23.96M20 34L20 25.6M12.58 29.9L17.03 23.96M9.5 20L15.8 20M12.58 10.1L17.03 16.04M20 6L20 14.4M27.42 10.1L22.97 16.04" />
       </svg>
     ),
   },
@@ -28,9 +30,11 @@ const cards = [
     text: "Une pierre identique en tout point au diamant naturel, plus accessible et tout aussi certifiée.",
     href: "/guides/naturel-vs-synthese",
     icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M10 15h20l-10 18-10-18Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-        <path d="M20 4v11M14 15l6-11 6 11" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="0.9" strokeLinejoin="round" strokeLinecap="round" aria-hidden="true">
+        <ellipse cx="19" cy="21" rx="10.5" ry="14" />
+        <ellipse cx="19" cy="21" rx="4.2" ry="5.6" />
+        <path d="M29.5 21L23.2 21M26.42 30.9L21.97 24.96M19 35L19 26.6M11.58 30.9L16.03 24.96M8.5 21L14.8 21M11.58 11.1L16.03 17.04M19 7L19 15.4M26.42 11.1L21.97 17.04" />
+        <path d="M33 6L33 12M30 9L36 9" strokeWidth="0.9" />
       </svg>
     ),
   },
