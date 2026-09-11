@@ -113,7 +113,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
               <div className="grid grid-cols-2 gap-4">
                 {categories.slice(0, 4).map((c) => (
                   <Link key={c.slug} href={`/bijoux/${c.slug}`} onClick={onClose} className="group relative aspect-square overflow-hidden bg-gris-produit">
-                    <Image src="/placeholders/category-bagues.svg" alt="" fill sizes="200px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <Image src={c.image} alt="" fill sizes="200px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                     <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-xs uppercase tracking-[0.06em] text-white">
                       {c.label}
                     </span>

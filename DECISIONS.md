@@ -70,6 +70,17 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
    3 nouveautés en catalogue, ces rangées laissaient un grand vide à droite sur desktop — pas digne
    d'un site abouti. Ajout de deux alliances (« Alliance Camille », « Alliance Hugo ») pour porter
    le catalogue à 4 pièces par carrousel, comme « Bagues de fiançailles ».
+9. **Fil d'Ariane incohérent sur les pages catégorie** : chaque page catégorie affichait
+   « Accueil / Joaillerie / [catégorie] », y compris sur la page « Alliances » — donnant
+   « Accueil / Joaillerie / Alliances » comme si Alliances était une sous-catégorie de Joaillerie,
+   alors que ce sont deux catégories sœurs. Corrigé en renommant ce niveau générique « Nos
+   collections » (`src/app/bijoux/[category]/page.tsx`), cohérent avec le titre de la page d'index
+   `/bijoux` elle-même — qui affichait, elle, « Joaillerie » dans son onglet et son fil d'Ariane
+   tout en montrant « Nos collections » comme titre visible ; uniformisé partout.
+10. **Vignettes de catégories toutes identiques** : la page `/bijoux` et l'aperçu « Nos collections »
+    de la recherche affichaient la même image (« bagues ») pour les trois catégories, y compris
+    Alliances et Joaillerie. Ajout d'un champ `image` par catégorie dans
+    `src/lib/data/categories.ts` (source unique), chacune affichant désormais son propre visuel.
 
 ## Marque et contenu
 

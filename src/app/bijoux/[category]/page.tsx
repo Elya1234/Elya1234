@@ -67,7 +67,7 @@ export default function CategoryPage({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.elya-joaillerie.fr/" },
-      { "@type": "ListItem", position: 2, name: "Joaillerie", item: "https://www.elya-joaillerie.fr/bijoux" },
+      { "@type": "ListItem", position: 2, name: "Nos collections", item: "https://www.elya-joaillerie.fr/bijoux" },
       { "@type": "ListItem", position: 3, name: category.label, item: `https://www.elya-joaillerie.fr/bijoux/${category.slug}` },
     ],
   };
@@ -75,7 +75,7 @@ export default function CategoryPage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Joaillerie", href: "/bijoux" }, { label: category.label }]} />
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Nos collections", href: "/bijoux" }, { label: category.label }]} />
       <CategoryIntro label={category.label} intro={category.intro} />
       <FilterBar availableShapes={availableShapes} availableMetals={availableMetals} resultCount={filtered.length} />
 
