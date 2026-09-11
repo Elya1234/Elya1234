@@ -1,4 +1,4 @@
-import type { Certificate, Clarity, ColorGrade, JewelryType, Metal, Product, ProductOptionPricing, Shape } from "@/lib/types";
+import type { Certificate, Clarity, ColorGrade, JewelryType, Metal, Product, ProductOptionPricing, RingStyle, Shape } from "@/lib/types";
 
 const CARAT_STEPS = ["0.20", "0.30", "0.40", "0.50", "0.60", "0.70", "0.80", "0.90", "1.00", "1.20", "1.50", "1.70", "2.00", "2.50", "3.00"];
 const CLARITIES: Clarity[] = ["VVS1", "VVS2", "VS1", "VS2", "SI1"];
@@ -54,6 +54,7 @@ function product(input: {
   categoryLabel: string;
   jewelryType: JewelryType;
   shapes: Shape[];
+  style?: RingStyle;
   metals: Metal[];
   isNew?: boolean;
   basePrice: number;
@@ -68,6 +69,7 @@ function product(input: {
     category: { slug: input.categorySlug, label: input.categoryLabel },
     jewelryType: input.jewelryType,
     shapes: input.shapes,
+    style: input.style,
     metals: input.metals,
     isNew: input.isNew,
     basePrice: input.basePrice,
@@ -101,6 +103,7 @@ export const products: Product[] = [
     categoryLabel: "Bagues de fiançailles",
     jewelryType: "bague",
     shapes: ["rond", "ovale", "coussin"],
+    style: "solitaire",
     metals: ["or-jaune", "or-blanc", "or-rose", "platine"],
     isNew: true,
     basePrice: 1290,
@@ -116,6 +119,7 @@ export const products: Product[] = [
     categoryLabel: "Bagues de fiançailles",
     jewelryType: "bague",
     shapes: ["ovale", "poire", "coussin", "emeraude"],
+    style: "halo",
     metals: ["or-jaune", "or-blanc", "or-rose"],
     basePrice: 1590,
     description:
@@ -130,6 +134,7 @@ export const products: Product[] = [
     categoryLabel: "Bagues de fiançailles",
     jewelryType: "bague",
     shapes: ["emeraude", "radiant", "asscher"],
+    style: "trilogie",
     metals: ["or-blanc", "platine"],
     isNew: true,
     basePrice: 2190,
@@ -241,6 +246,7 @@ export const products: Product[] = [
     categoryLabel: "Bagues de fiançailles",
     jewelryType: "bague",
     shapes: ["rond", "ovale"],
+    style: "solitaire",
     metals: ["or-jaune", "or-rose"],
     basePrice: 1450,
     description: "Un anneau torsadé délicat vient sublimer un solitaire central, entre tradition et modernité.",

@@ -6,6 +6,7 @@ import { getProductsByCategory } from "@/lib/data/products";
 import { applyFilters, parseFilters } from "@/lib/filters";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CategoryIntro } from "@/components/plp/CategoryIntro";
+import { StyleFilterStrip } from "@/components/plp/StyleFilterStrip";
 import { FilterBar } from "@/components/plp/FilterBar";
 import { MobileFilterSort } from "@/components/plp/MobileFilterSort";
 import { EditorialTile } from "@/components/plp/EditorialTile";
@@ -55,6 +56,7 @@ export default function CategoryPage({
     if (filters.formes.length) params.set("forme", filters.formes.join(","));
     if (filters.metaux.length) params.set("metal", filters.metaux.join(","));
     if (filters.types.length) params.set("type", filters.types.join(","));
+    if (filters.styles.length) params.set("style", filters.styles.join(","));
     if (filters.prixMin !== undefined || filters.prixMax !== undefined) params.set("prix", `${filters.prixMin ?? 0}-${filters.prixMax ?? 999999}`);
     if (filters.tri !== "recommandes") params.set("tri", filters.tri);
     if (p > 1) params.set("page", String(p));
@@ -77,6 +79,7 @@ export default function CategoryPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Nos collections", href: "/bijoux" }, { label: category.label }]} />
       <CategoryIntro label={category.label} intro={category.intro} />
+      {category.slug === "bagues-de-fiancailles" && <StyleFilterStrip />}
       <FilterBar availableShapes={availableShapes} availableMetals={availableMetals} resultCount={filtered.length} />
 
       <div className="mx-auto max-w-container px-4 pb-28 pt-8 lg:px-12 lg:pb-16">
@@ -94,7 +97,7 @@ export default function CategoryPage({
               {pageProducts.map((product, i) => (
                 <Fragment key={product.slug}>
                   <ProductCard product={product} />
-                  {i > 0 && (i + 1) % 8 === 0 && <EditorialTile />}
+                  {i > 0 && (i + 1) % 4 === 0 && <EditorialTile />}
                 </Fragment>
               ))}
             </div>

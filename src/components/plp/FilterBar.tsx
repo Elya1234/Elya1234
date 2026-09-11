@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { ShapeIcon } from "@/components/ui/ShapeIcon";
 import { MetalSwatch, metalLabel } from "@/components/ui/MetalSwatch";
 import { allShapes, shapeLabels } from "@/lib/data/shapes";
-import type { JewelryType, Metal, Shape } from "@/lib/types";
+import { ringStyleLabels } from "@/lib/data/ringStyles";
+import type { JewelryType, Metal, RingStyle, Shape } from "@/lib/types";
 import { priceRanges, sortOptions, type SortKey } from "@/lib/filters";
 import { cx } from "@/lib/utils";
 
@@ -28,6 +29,7 @@ export function FilterBar({ availableShapes, availableMetals, resultCount }: { a
   const currentFormes = useMemo(() => (searchParams.get("forme")?.split(",").filter(Boolean) as Shape[]) ?? [], [searchParams]);
   const currentMetaux = useMemo(() => (searchParams.get("metal")?.split(",").filter(Boolean) as Metal[]) ?? [], [searchParams]);
   const currentTypes = useMemo(() => (searchParams.get("type")?.split(",").filter(Boolean) as JewelryType[]) ?? [], [searchParams]);
+  const currentStyles = useMemo(() => (searchParams.get("style")?.split(",").filter(Boolean) as RingStyle[]) ?? [], [searchParams]);
   const currentPrix = searchParams.get("prix") ?? "";
   const currentTri = (searchParams.get("tri") as SortKey) ?? "recommandes";
 
@@ -42,7 +44,7 @@ export function FilterBar({ availableShapes, availableMetals, resultCount }: { a
     router.push(pathname, { scroll: false });
   }
 
-  const hasActiveFilters = currentFormes.length > 0 || currentMetaux.length > 0 || currentTypes.length > 0 || !!currentPrix;
+  const hasActiveFilters = currentFormes.length > 0 || currentMetaux.length > 0 || currentTypes.length > 0 || currentStyles.length > 0 || !!currentPrix;
 
   return (
     <div className="sticky top-[65px] z-30 border-b border-ligne bg-white lg:top-[113px]">
@@ -88,6 +90,9 @@ export function FilterBar({ availableShapes, availableMetals, resultCount }: { a
           ))}
           {currentTypes.map((t) => (
             <ActiveChip key={t} label={jewelryTypeLabels[t]} onRemove={() => updateParam("type", currentTypes.filter((x) => x !== t).join(",") || null)} />
+          ))}
+          {currentStyles.map((s) => (
+            <ActiveChip key={s} label={ringStyleLabels[s]} onRemove={() => updateParam("style", currentStyles.filter((x) => x !== s).join(",") || null)} />
           ))}
           {currentPrix && <ActiveChip label={priceRanges.find((r) => r.value === currentPrix)?.label ?? currentPrix} onRemove={() => updateParam("prix", null)} />}
           <button type="button" onClick={clearAll} className="ml-1 text-xs uppercase tracking-[0.06em] text-gris-texte underline">

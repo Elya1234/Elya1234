@@ -6,6 +6,7 @@ import { StartCards } from "@/components/home/StartCards";
 import { ShapeSelector } from "@/components/home/ShapeSelector";
 import { ProductCarousel } from "@/components/home/ProductCarousel";
 import { EditorialGift } from "@/components/home/EditorialGift";
+import { GiftOccasions } from "@/components/home/GiftOccasions";
 import { TrustSection } from "@/components/home/TrustSection";
 import { Reviews } from "@/components/home/Reviews";
 import { CollectionsScroller } from "@/components/home/CollectionsScroller";
@@ -36,6 +37,7 @@ export default function Home() {
       <ProductCarousel title="Alliances" seeAllHref="/bijoux/alliances" products={alliances} />
       <ProductCarousel title="Nouveautés" seeAllHref="/bijoux/bagues-de-fiancailles?tri=nouveautes" products={newArrivals} />
       <EditorialGift />
+      <GiftOccasions />
       <TrustSection />
       <CollectionsScroller />
       <BoutiquesSection />

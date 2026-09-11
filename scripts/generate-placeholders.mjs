@@ -72,6 +72,10 @@ items.push({ file: "guide-synthese.svg", w: 1200, h: 800, label: "Naturel vs syn
 items.push({ file: "account-hero.svg", w: 1000, h: 1400, label: "Elya Joaillerie" });
 items.push({ file: "a-vos-cotes.svg", w: 1600, h: 900, label: "À vos côtés" });
 items.push({ file: "instagram-elya.svg", w: 900, h: 1100, label: "@elya_joaillerie" });
+items.push({ file: "occasion-lui.svg", w: 900, h: 1100, label: "Pour lui" });
+items.push({ file: "occasion-elle.svg", w: 900, h: 1100, label: "Pour elle" });
+items.push({ file: "occasion-anniversaire.svg", w: 900, h: 1100, label: "Anniversaire" });
+items.push({ file: "occasion-moments.svg", w: 900, h: 1100, label: "Moments spéciaux" });
 
 for (const it of items) {
   writeFileSync(join(OUT, it.file), svg(it.file, it.w, it.h, it.label), "utf8");

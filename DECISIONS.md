@@ -141,6 +141,26 @@ En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été tr
     peu cohérents entre systèmes et peu qualitatifs, par des icônes trait fines dans le même style
     que le reste du site. Vérifié par capture d'écran (desktop et mobile) et par lecture du poids
     de police calculé (400 → 500 sur le `<h1>`).
+16. **Trois éléments de la référence encore absents, signalés par le client (captures sacet.com)**,
+    ajoutés en reproduisant la structure (pas les photos) :
+    - `GiftOccasions.tsx` : grille 2x2 « Pour lui / Pour elle / Pour un anniversaire / Pour des
+      moments spéciaux », photo + légende + « Découvrir », ajoutée sur l'accueil juste après le
+      gift guide existant — reproduit la grille d'occasions de la référence.
+    - Filtre « Par style » sur la PLP Bagues de fiançailles : ce filtre existait déjà comme lien
+      mort (`?style=solitaire` dans le méga-menu ne filtrait rien, `style` n'étant lu nulle part
+      dans `filters.ts`). Ajout du champ `style` sur `Product`, du parsing/filtrage réel dans
+      `filters.ts`, et d'un nouveau composant `StyleFilterStrip.tsx` : une rangée de vignettes
+      avec une vraie photo produit par style (Solitaire/Halo/Trilogie) au-dessus de la grille,
+      comme sur la référence — et qui filtre vraiment désormais. Vérifié : cliquer « Halo » passe
+      l'URL à `?style=halo` et le compteur de résultats à 1.
+    - Vignette « Besoin de conseils ? » dans la grille produits (`EditorialTile.tsx`) : le
+      composant existait déjà avec le même texte que la référence, mais n'avait aucune photo (fond
+      plat) et ne s'affichait jamais en pratique — il ne s'insérait qu'après le 8e produit, alors
+      qu'aucune catégorie n'a plus de 4 produits dans le catalogue actuel. Ajout d'une photo en
+      fond et changement du seuil à 4 pour qu'elle s'affiche réellement (vérifié sur Bagues de
+      fiançailles et Alliances).
+    Vérifié par capture d'écran desktop et mobile (390px, aucun débordement) et par le script de
+    fumée (18/20, stable).
 
 ## Marque et contenu
 
