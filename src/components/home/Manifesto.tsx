@@ -6,7 +6,7 @@ export function Manifesto() {
   return (
     <section className="reveal mx-auto max-w-container px-4 py-20 lg:px-12 lg:py-30">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="font-script text-4xl text-vert-sauge">Nous sommes {brand.shortName}</p>
+        <p className="font-script text-4xl text-dore">Nous sommes {brand.shortName}</p>
         <p className="mt-4 font-serif text-2xl leading-snug lg:text-3xl">
           Une joaillerie française qui façonne à la main chaque bague, chaque alliance, chaque diamant sélectionné avec la même exigence.
         </p>

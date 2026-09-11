@@ -50,7 +50,7 @@ export function FloatingButtons() {
         onClick={() => setContactOpen((o) => !o)}
         aria-expanded={contactOpen}
         aria-label="Contact"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-vert-profond text-white shadow-popover transition-transform hover:scale-105"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-bleu-roi text-white shadow-popover transition-transform hover:scale-105"
       >
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
           <path d="M2 5.5h18v11H8l-4 3.2v-3.2H2v-11Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />

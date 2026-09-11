@@ -49,10 +49,10 @@ export function ProductCard({ product }: { product: Product }) {
           aria-label={isSaved ? "Retirer de la liste d'envies" : "Ajouter à la liste d'envies"}
           className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90"
         >
-          <svg width="17" height="17" viewBox="0 0 19 19" fill={mounted && isSaved ? "#0E3B2E" : "none"} aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 19 19" fill={mounted && isSaved ? "#1A2A63" : "none"} aria-hidden="true">
             <path
               d="M9.5 16.5S2 12 2 6.9C2 4.2 4 2.5 6.3 2.5c1.5 0 2.7.8 3.2 1.7.5-.9 1.7-1.7 3.2-1.7C15 2.5 17 4.2 17 6.9c0 5.1-7.5 9.6-7.5 9.6Z"
-              stroke="#0E3B2E"
+              stroke="#1A2A63"
               strokeWidth="1.3"
             />
           </svg>

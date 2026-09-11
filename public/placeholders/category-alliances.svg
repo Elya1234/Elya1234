@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
   <rect width="800" height="1000" fill="#DCD6C8" />
-  <circle cx="400" cy="470" r="144" fill="none" stroke="#0E3B2E" stroke-width="12.959999999999999" opacity="0.35" />
-  <circle cx="400" cy="362" r="31.68" fill="#0E3B2E" opacity="0.4" />
+  <circle cx="400" cy="470" r="144" fill="none" stroke="#1A2A63" stroke-width="12.959999999999999" opacity="0.35" />
+  <circle cx="400" cy="362" r="31.68" fill="#1A2A63" opacity="0.4" />
   <text x="400" y="940" text-anchor="middle" font-family="Georgia, serif" font-size="22.400000000000002" fill="#6B6B6B" letter-spacing="1">Alliances</text>
 </svg>

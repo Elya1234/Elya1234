@@ -7,7 +7,7 @@ export function MegaMenu({ item, open, onClose }: { item: NavItem; open: boolean
   return (
     <div
       className={cx(
-        "fixed inset-x-0 top-[113px] z-40 border-t border-ligne bg-white shadow-popover transition-all duration-200",
+        "absolute inset-x-0 top-full z-40 border-t border-ligne bg-white shadow-popover transition-all duration-200",
         open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0",
       )}
     >

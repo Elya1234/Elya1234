@@ -21,8 +21,8 @@ function svg(name, w, h, label) {
   const cy = h / 2 - h * 0.03;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
   <rect width="${w}" height="${h}" fill="${c}" />
-  <circle cx="${cx}" cy="${cy}" r="${ringR}" fill="none" stroke="#0E3B2E" stroke-width="${Math.max(2, ringR * 0.09)}" opacity="0.35" />
-  <circle cx="${cx}" cy="${cy - ringR * 0.75}" r="${ringR * 0.22}" fill="#0E3B2E" opacity="0.4" />
+  <circle cx="${cx}" cy="${cy}" r="${ringR}" fill="none" stroke="#1A2A63" stroke-width="${Math.max(2, ringR * 0.09)}" opacity="0.35" />
+  <circle cx="${cx}" cy="${cy - ringR * 0.75}" r="${ringR * 0.22}" fill="#1A2A63" opacity="0.4" />
   <text x="${w / 2}" y="${h - h * 0.06}" text-anchor="middle" font-family="Georgia, serif" font-size="${Math.max(11, w * 0.028)}" fill="#6B6B6B" letter-spacing="1">${label}</text>
 </svg>`;
 }

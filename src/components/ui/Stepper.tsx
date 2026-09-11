@@ -10,21 +10,21 @@ export function Stepper({ steps, currentIndex }: { steps: string[]; currentIndex
               aria-current={i === currentIndex ? "step" : undefined}
               className={cx(
                 "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs",
-                i < currentIndex && "border-vert-profond bg-vert-profond text-white",
-                i === currentIndex && "border-vert-profond text-vert-profond",
+                i < currentIndex && "border-bleu-roi bg-bleu-roi text-white",
+                i === currentIndex && "border-bleu-roi text-bleu-roi",
                 i > currentIndex && "border-ligne text-gris-texte",
               )}
             >
               {i < currentIndex ? "✓" : i + 1}
             </span>
             {i < steps.length - 1 && (
-              <span className={cx("mx-1 h-px flex-1", i < currentIndex ? "bg-vert-profond" : "bg-ligne")} aria-hidden="true" />
+              <span className={cx("mx-1 h-px flex-1", i < currentIndex ? "bg-bleu-roi" : "bg-ligne")} aria-hidden="true" />
             )}
           </div>
           <span
             className={cx(
               "hidden text-center text-[10px] uppercase tracking-[0.06em] sm:block",
-              i === currentIndex ? "text-vert-profond" : "text-gris-texte",
+              i === currentIndex ? "text-bleu-roi" : "text-gris-texte",
             )}
           >
             {step}

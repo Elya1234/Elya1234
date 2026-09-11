@@ -18,7 +18,7 @@ export function Select({
       </label>
       <select
         id={id}
-        className="min-h-[48px] w-full border border-ligne bg-white px-4 text-sm outline-none focus:border-vert-profond"
+        className="min-h-[48px] w-full border border-ligne bg-white px-4 text-sm outline-none focus:border-bleu-roi"
         {...rest}
       >
         {options.map((o) => (

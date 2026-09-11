@@ -47,7 +47,7 @@ export function StartCards() {
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {cards.map((card) => (
             <div key={card.title} className="flex flex-col items-center text-center">
-              <div className="mb-5 text-vert-profond">{card.icon}</div>
+              <div className="mb-5 text-bleu-roi">{card.icon}</div>
               <h3 className="font-serif text-xl">{card.title}</h3>
               <p className="mt-2 text-sm text-gris-texte">{card.text}</p>
               <div className="mt-4">

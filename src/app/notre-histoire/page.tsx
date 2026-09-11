@@ -15,7 +15,7 @@ export default function AboutPage() {
       <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Notre histoire" }]} />
       <div className="mx-auto max-w-container px-4 pb-24 lg:px-12">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="font-script text-4xl text-vert-sauge">Nous sommes {brand.shortName}</p>
+          <p className="font-script text-4xl text-dore">Nous sommes {brand.shortName}</p>
           <h1 className="mt-2 font-serif text-3xl lg:text-4xl">Une joaillerie française, façonnée à la main</h1>
         </div>
 

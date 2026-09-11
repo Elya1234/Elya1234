@@ -60,7 +60,7 @@ export function ContactForm() {
         </p>
 
         {status === "success" ? (
-          <p role="status" className="mt-8 text-sm text-vert-profond">
+          <p role="status" className="mt-8 text-sm text-bleu-roi">
             Merci, votre message a bien été envoyé. Nous revenons vers vous rapidement.
           </p>
         ) : (

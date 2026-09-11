@@ -54,10 +54,10 @@ export function Header() {
               </a>
             </div>
             <div className="flex items-center gap-5 text-xs uppercase tracking-[0.08em]">
-              <Link href="/rendez-vous" className="hover:text-vert-profond">
+              <Link href="/rendez-vous" className="hover:text-bleu-roi">
                 Prendre RDV
               </Link>
-              <Link href="/contact" className="hover:text-vert-profond">
+              <Link href="/contact" className="hover:text-bleu-roi">
                 Nous contacter
               </Link>
             </div>
@@ -110,14 +110,13 @@ export function Header() {
         </div>
       </div>
 
-      <nav aria-label="Navigation principale" className="hidden border-t border-ligne lg:block">
+      <nav aria-label="Navigation principale" className="relative hidden border-t border-ligne lg:block">
         <ul className="mx-auto flex max-w-container justify-center gap-8 px-12">
           {navItems.map((item) => (
             <li
               key={item.label}
               onMouseEnter={() => setActiveMenu(item.label)}
               onMouseLeave={() => setActiveMenu(null)}
-              className="relative"
             >
               <Link
                 href={item.href}
@@ -125,7 +124,7 @@ export function Header() {
                 onFocus={() => setActiveMenu(item.label)}
                 className={cx(
                   "flex min-h-[48px] items-center border-b-2 text-[11px] uppercase tracking-[0.1em] transition-colors",
-                  activeMenu === item.label ? "border-vert-profond text-vert-profond" : "border-transparent hover:text-vert-profond",
+                  activeMenu === item.label ? "border-bleu-roi text-bleu-roi" : "border-transparent hover:text-bleu-roi",
                 )}
               >
                 {item.label}
@@ -144,7 +143,7 @@ export function Header() {
 
 function CountBadge({ count }: { count: number }) {
   return (
-    <span className="absolute right-1 top-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-vert-profond px-1 text-[9px] text-white">
+    <span className="absolute right-1 top-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-bleu-roi px-1 text-[9px] text-white">
       {count}
     </span>
   );

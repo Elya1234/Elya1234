@@ -37,7 +37,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
           <ul className="space-y-2 border-l border-ligne text-sm">
             {guide.sections.map((s) => (
               <li key={s.id}>
-                <a href={`#${s.id}`} className="block border-l-2 border-transparent py-1 pl-4 hover:border-vert-profond hover:text-vert-profond">
+                <a href={`#${s.id}`} className="block border-l-2 border-transparent py-1 pl-4 hover:border-bleu-roi hover:text-bleu-roi">
                   {s.heading}
                 </a>
               </li>

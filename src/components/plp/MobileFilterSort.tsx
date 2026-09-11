@@ -148,7 +148,7 @@ export function MobileFilterSort({ categorySlug, availableShapes, availableMetal
               key={o.value}
               type="button"
               onClick={() => commitSort(o.value)}
-              className={cx("flex min-h-[52px] items-center justify-between border-b border-ligne text-left text-sm", currentTri === o.value && "text-vert-profond")}
+              className={cx("flex min-h-[52px] items-center justify-between border-b border-ligne text-left text-sm", currentTri === o.value && "text-bleu-roi")}
             >
               {o.label}
               {currentTri === o.value && <span aria-hidden="true">✓</span>}

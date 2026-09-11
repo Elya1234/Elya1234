@@ -23,7 +23,7 @@ export function Reviews() {
       <div className="grid gap-8 sm:grid-cols-3">
         {reviews.map((review) => (
           <blockquote key={review.author} className="border border-ligne p-6 text-center">
-            <p aria-hidden="true" className="mb-3 text-vert-profond">
+            <p aria-hidden="true" className="mb-3 text-bleu-roi">
               ★★★★★
             </p>
             <p className="text-sm leading-relaxed text-gris-texte">« {review.text} »</p>

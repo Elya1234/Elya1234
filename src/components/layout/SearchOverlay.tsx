@@ -149,7 +149,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                           <Link
                             href={`/bijoux/${c.slug}`}
                             onClick={onClose}
-                            className={cx("block min-h-[44px] py-2 text-lg", activeIndex === i && "text-vert-profond underline")}
+                            className={cx("block min-h-[44px] py-2 text-lg", activeIndex === i && "text-bleu-roi underline")}
                           >
                             {c.label}
                           </Link>
@@ -169,7 +169,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
                             <Link
                               href={`/produit/${p.slug}`}
                               onClick={onClose}
-                              className={cx("block", activeIndex === flatIndex && "ring-1 ring-vert-profond")}
+                              className={cx("block", activeIndex === flatIndex && "ring-1 ring-bleu-roi")}
                             >
                               <div className="relative aspect-[4/5] bg-gris-produit">
                                 <Image src={p.images[0]} alt={p.name} fill sizes="240px" className="object-cover" />

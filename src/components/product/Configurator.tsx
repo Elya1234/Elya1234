@@ -228,7 +228,7 @@ export function Configurator({ product }: { product: Product }) {
             {formatPrice(price)} · Ajouter au panier
           </Button>
           {addedFeedback && (
-            <p role="status" className="mt-2 text-center text-xs text-vert-profond">
+            <p role="status" className="mt-2 text-center text-xs text-bleu-roi">
               Ajouté au panier ✓
             </p>
           )}

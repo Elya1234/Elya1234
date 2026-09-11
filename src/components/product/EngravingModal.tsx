@@ -29,7 +29,7 @@ export function EngravingModal({
             type="button"
             aria-pressed={position === p}
             onClick={() => setPosition(p)}
-            className={`min-h-[44px] flex-1 border px-3 text-xs uppercase tracking-[0.06em] ${position === p ? "border-vert-profond bg-vert-profond text-white" : "border-ligne"}`}
+            className={`min-h-[44px] flex-1 border px-3 text-xs uppercase tracking-[0.06em] ${position === p ? "border-bleu-roi bg-bleu-roi text-white" : "border-ligne"}`}
           >
             {p === "interieur" ? "Intérieur" : "Extérieur"}
           </button>
@@ -43,7 +43,7 @@ export function EngravingModal({
         value={text}
         maxLength={MAX_LENGTH}
         onChange={(e) => setText(e.target.value)}
-        className="min-h-[52px] w-full border border-ligne px-4 text-lg font-script outline-none focus:border-vert-profond"
+        className="min-h-[52px] w-full border border-ligne px-4 text-lg font-script outline-none focus:border-bleu-roi"
         placeholder="Ex. : Toujours"
       />
       <p className="mt-1 text-right text-xs text-gris-texte">{text.length}/{MAX_LENGTH}</p>

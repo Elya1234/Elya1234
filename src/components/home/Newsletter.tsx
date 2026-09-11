@@ -59,7 +59,7 @@ export function Newsletter() {
                 aria-invalid={status === "error"}
                 className="min-h-[48px] flex-1 border border-white/30 bg-transparent px-4 text-sm text-white outline-none placeholder:text-white/50 focus:border-white"
               />
-              <Button type="submit" disabled={status === "loading"} className="border-white bg-white text-vert-profond hover:bg-white/90">
+              <Button type="submit" disabled={status === "loading"} className="border-white bg-white text-bleu-roi hover:bg-white/90">
                 {status === "loading" ? "Envoi…" : "S'inscrire"}
               </Button>
             </div>

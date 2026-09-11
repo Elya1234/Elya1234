@@ -21,7 +21,7 @@ export default function StoresPage() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Rechercher une ville, une adresse…"
-          className="mb-6 min-h-[48px] w-full max-w-md border border-ligne px-4 text-sm outline-none focus:border-vert-profond"
+          className="mb-6 min-h-[48px] w-full max-w-md border border-ligne px-4 text-sm outline-none focus:border-bleu-roi"
         />
         <ShopMap shops={shops} query={query} />
       </div>

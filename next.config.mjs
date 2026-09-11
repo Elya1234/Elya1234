@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Placeholders locaux uniquement (SVG générés par scripts/generate-placeholders.mjs).
-    dangerouslyAllowSVG: true,
-    contentDispositionType: "inline",
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Les visuels sont des placeholders SVG locaux (scripts/generate-placeholders.mjs) ; aucune
+    // optimisation raster n'est nécessaire et l'optimiseur d'image de Next échoue à les détecter
+    // sans le paquet `sharp`. À réactiver (retirer `unoptimized`) une fois de vraies photos fournies.
+    unoptimized: true,
   },
 };
 

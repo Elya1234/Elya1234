@@ -13,6 +13,34 @@ pages légales — tous réellement fonctionnels. i18n multi-langue complet, tes
 e2e) et intégration d'un vrai CMS/back-end/paiement restent hors périmètre de cette session (voir
 « Ce qui reste à fournir »).
 
+## Palette de couleurs (mise à jour)
+
+À la demande de l'utilisateur, la palette verte initiale a été remplacée par : **bleu roi**
+(`--bleu-roi`, #1A2A63 — boutons, en-tête, footer, états actifs), **orange-rose/corail**
+(`--orange-rose`, #F3B79B pour les fonds éditoriaux clairs ; `--orange-rose-texte`, #A8502E, une
+teinte plus foncée conforme au contraste AA pour le texte blanc sur fond corail) et une touche de
+**doré** (`--dore`, #C9A85C — accent script "Nous sommes Elya", identique à la pastille métal
+"or jaune"). Tokens dans `tailwind.config.ts`.
+
+## Bugs corrigés lors de la revue de design
+
+En reprenant chaque page avec la nouvelle palette, deux bugs réels ont été trouvés et corrigés
+(présents depuis la première version, indépendants de la couleur) :
+
+1. **Toutes les images étaient cassées.** L'optimiseur d'images de Next.js rejetait nos SVG
+   placeholder (« isn't a valid image ») faute du paquet `sharp` dans cet environnement. Corrigé en
+   passant `images.unoptimized: true` dans `next.config.mjs` — pertinent tant que les visuels restent
+   des SVG légers ; à retirer quand de vraies photos seront fournies (et installer `sharp`, recommandé
+   par Next.js pour un déploiement autogéré).
+2. **Erreur d'hydratation React** sur toutes les pages (`Drawer.tsx` : panier, menu mobile, filtres).
+   Le composant faisait `if (typeof document === "undefined") return null` directement dans le rendu,
+   ce qui produit un rendu serveur différent du premier rendu client (classique piège Next.js/React).
+   Corrigé avec un état `mounted` réglé dans un `useEffect`, garantissant que le serveur et le premier
+   rendu client produisent exactement le même résultat.
+3. **Mega-menu mal positionné** : ancré en position fixe avec un décalage en pixels codé en dur, il
+   recouvrait la ligne de navigation au lieu de s'ouvrir juste en dessous. Corrigé en l'ancrant en
+   position absolue au conteneur `<nav>` (`top-full`) plutôt qu'au viewport.
+
 ## Marque et contenu
 
 - Nom de marque provisoire : **Elya Joaillerie** (`src/lib/data/brand.ts`) — à remplacer.

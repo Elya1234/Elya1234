@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { cx } from "@/lib/utils";
 
@@ -18,6 +18,12 @@ export function Drawer({
   side?: "right" | "left" | "bottom";
   footer?: ReactNode;
 }) {
+  // Portail monté seulement côté client : le serveur ne rend jamais createPortal (pas de
+  // document), donc on attend le montage plutôt que de brancher le rendu sur typeof document,
+  // qui désynchronise le premier rendu client de l'hydratation SSR.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   // Retire le panneau fermé de l'arbre d'accessibilité et de l'ordre de tabulation,
   // tout en le laissant dans le DOM pour l'animation de fermeture.
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -49,7 +55,7 @@ export function Drawer({
     };
   }, [open, onClose]);
 
-  if (typeof document === "undefined") return null;
+  if (!mounted) return null;
 
   const panelPosition = {
     right: "right-0 top-0 h-full w-full max-w-md",

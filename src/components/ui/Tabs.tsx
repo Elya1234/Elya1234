@@ -15,7 +15,7 @@ export function Tabs({ tabs }: { tabs: { label: string; content: ReactNode }[] }
             onClick={() => setActive(i)}
             className={cx(
               "min-h-[52px] flex-1 border-b-2 px-2 text-xs uppercase tracking-[0.08em] transition-colors",
-              active === i ? "border-vert-profond text-vert-profond" : "border-transparent text-gris-texte hover:text-noir-texte",
+              active === i ? "border-bleu-roi text-bleu-roi" : "border-transparent text-gris-texte hover:text-noir-texte",
             )}
           >
             {tab.label}

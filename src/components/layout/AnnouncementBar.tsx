@@ -21,7 +21,7 @@ export function AnnouncementBar() {
   if (dismissed) return null;
 
   return (
-    <div className="relative flex min-h-[36px] items-center justify-center bg-vert-profond px-10 py-2 text-center text-[11px] uppercase tracking-[0.08em] text-white">
+    <div className="relative flex min-h-[36px] items-center justify-center bg-bleu-roi px-10 py-2 text-center text-[11px] uppercase tracking-[0.08em] text-white">
       <Link href="/boutiques" className="underline-link">
         {brand.announcement[index]}
       </Link>

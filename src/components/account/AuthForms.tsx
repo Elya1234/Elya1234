@@ -51,7 +51,7 @@ function LoginForm() {
       <div>
         <h2 className="mb-4 font-serif text-2xl">Mot de passe oublié</h2>
         {resetSent ? (
-          <p role="status" className="text-sm text-vert-profond">Si un compte existe avec cette adresse, un e-mail de réinitialisation vient d&apos;être envoyé.</p>
+          <p role="status" className="text-sm text-bleu-roi">Si un compte existe avec cette adresse, un e-mail de réinitialisation vient d&apos;être envoyé.</p>
         ) : (
           <form
             onSubmit={(e) => {
@@ -118,7 +118,7 @@ function SignupForm() {
         <FormField name="password" type="password" label="Mot de passe" required value={password} onChange={(e) => setPassword(e.target.value)} />
         <ul className="mt-2 space-y-1">
           {PASSWORD_RULES.map((r) => (
-            <li key={r.label} className={`text-xs ${r.test(password) ? "text-vert-profond" : "text-gris-texte"}`}>
+            <li key={r.label} className={`text-xs ${r.test(password) ? "text-bleu-roi" : "text-gris-texte"}`}>
               {r.test(password) ? "✓" : "•"} {r.label}
             </li>
           ))}

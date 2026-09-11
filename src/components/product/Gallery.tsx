@@ -58,7 +58,7 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
                 key={img}
                 type="button"
                 onClick={() => setLightboxIndex(i)}
-                className={cx("relative h-16 w-16 overflow-hidden border", i === lightboxIndex ? "border-vert-profond" : "border-ligne")}
+                className={cx("relative h-16 w-16 overflow-hidden border", i === lightboxIndex ? "border-bleu-roi" : "border-ligne")}
               >
                 <Image src={img} alt="" fill sizes="64px" className="object-cover" />
               </button>

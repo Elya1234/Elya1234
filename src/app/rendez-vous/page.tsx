@@ -91,7 +91,7 @@ export default function AppointmentPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Rechercher une ville…"
-              className="mb-4 min-h-[48px] w-full max-w-sm border border-ligne px-4 text-sm outline-none focus:border-vert-profond"
+              className="mb-4 min-h-[48px] w-full max-w-sm border border-ligne px-4 text-sm outline-none focus:border-bleu-roi"
             />
             <ShopMap shops={shops} query={query} selected={shopSlug} onSelect={setShopSlug} linkToDetail={false} />
           </div>
@@ -138,7 +138,7 @@ export default function AppointmentPage() {
                   disabled={day.slots.length === 0}
                   className={cx(
                     "flex min-h-[64px] min-w-[76px] flex-col items-center justify-center border text-xs uppercase",
-                    selectedDay?.toDateString() === day.date.toDateString() ? "border-vert-profond bg-vert-profond text-white" : "border-ligne",
+                    selectedDay?.toDateString() === day.date.toDateString() ? "border-bleu-roi bg-bleu-roi text-white" : "border-ligne",
                     day.slots.length === 0 && "cursor-not-allowed opacity-30",
                   )}
                 >
@@ -176,7 +176,7 @@ export default function AppointmentPage() {
 
         {step === 4 && confirmed && (
           <div className="max-w-md">
-            <p aria-hidden="true" className="mb-3 text-3xl text-vert-profond">
+            <p aria-hidden="true" className="mb-3 text-3xl text-bleu-roi">
               ✓
             </p>
             <h2 className="mb-4 font-serif text-2xl">Rendez-vous confirmé</h2>

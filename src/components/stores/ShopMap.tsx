@@ -55,7 +55,7 @@ export function ShopMap({
       <div className="relative aspect-[4/3] overflow-hidden border border-ligne bg-[#E4E0D6] lg:aspect-auto">
         <svg viewBox="0 0 100 100" className="h-full w-full" preserveAspectRatio="none" aria-hidden="true">
           <rect width="100" height="100" fill="#E4E0D6" />
-          <path d="M20 15 L45 8 L70 12 L88 25 L92 45 L82 65 L70 85 L50 92 L30 82 L12 60 L10 35 Z" fill="#D6D1C1" stroke="#0E3B2E" strokeWidth="0.3" opacity="0.5" />
+          <path d="M20 15 L45 8 L70 12 L88 25 L92 45 L82 65 L70 85 L50 92 L30 82 L12 60 L10 35 Z" fill="#D6D1C1" stroke="#1A2A63" strokeWidth="0.3" opacity="0.5" />
         </svg>
         {filtered.map((shop) => {
           const pos = toPosition(shop.lat, shop.lng);
@@ -68,7 +68,7 @@ export function ShopMap({
               style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
               className={cx(
                 "absolute flex h-7 w-7 -translate-x-1/2 -translate-y-full items-center justify-center rounded-full border-2 border-white text-xs text-white shadow-popover transition-transform",
-                active === shop.slug ? "z-10 scale-125 bg-vert-profond" : "bg-noir-texte/70",
+                active === shop.slug ? "z-10 scale-125 bg-bleu-roi" : "bg-noir-texte/70",
               )}
             >
               ●

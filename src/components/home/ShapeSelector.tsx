@@ -20,7 +20,7 @@ export function ShapeSelector() {
             href={`/bijoux/bagues-de-fiancailles?forme=${shape}`}
             className="group flex shrink-0 flex-col items-center gap-3"
           >
-            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-ligne text-noir-texte transition-colors group-hover:border-vert-profond group-hover:text-vert-profond">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-ligne text-noir-texte transition-colors group-hover:border-bleu-roi group-hover:text-bleu-roi">
               <ShapeIcon shape={shape} />
             </span>
             <span className="text-xs uppercase tracking-[0.06em] text-gris-texte group-hover:text-noir-texte">{shapeLabels[shape]}</span>

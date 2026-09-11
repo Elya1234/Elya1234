@@ -106,7 +106,7 @@ export default function CartPage() {
                 <span>Offerte</span>
               </div>
               {appliedPromo && (
-                <div className="flex justify-between py-1 text-sm text-vert-profond">
+                <div className="flex justify-between py-1 text-sm text-bleu-roi">
                   <span>Code {appliedPromo.code}</span>
                   <span>-{formatPrice(discount)}</span>
                 </div>
@@ -126,7 +126,7 @@ export default function CartPage() {
                     value={promoInput}
                     onChange={(e) => setPromoInput(e.target.value)}
                     placeholder="BIENVENUE10"
-                    className="min-h-[44px] flex-1 border border-ligne px-3 text-sm outline-none focus:border-vert-profond"
+                    className="min-h-[44px] flex-1 border border-ligne px-3 text-sm outline-none focus:border-bleu-roi"
                   />
                   <Button type="submit" size="sm" variant="secondary">
                     Valider

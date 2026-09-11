@@ -16,7 +16,7 @@ export function ToastViewport() {
           role="status"
           className={cx(
             "pointer-events-auto flex items-center gap-3 rounded-sm px-4 py-3 text-sm text-white shadow-popover animate-fade-in-up",
-            t.tone === "success" && "bg-vert-profond",
+            t.tone === "success" && "bg-bleu-roi",
             t.tone === "error" && "bg-red-800",
             t.tone === "info" && "bg-noir-texte",
           )}

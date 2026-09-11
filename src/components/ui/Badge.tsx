@@ -6,7 +6,7 @@ export function Badge({ children, tone = "dark" }: { children: ReactNode; tone?:
     <span
       className={cx(
         "inline-block px-2.5 py-1 text-[10px] uppercase tracking-[0.1em]",
-        tone === "dark" ? "bg-vert-profond text-white" : "bg-white text-noir-texte",
+        tone === "dark" ? "bg-bleu-roi text-white" : "bg-white text-noir-texte",
       )}
     >
       {children}

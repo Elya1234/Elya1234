@@ -24,7 +24,7 @@ export function ProductCarousel({ title, seeAllHref, products }: { title: string
               type="button"
               aria-label="Précédent"
               onClick={() => scrollBy(-360)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-ligne hover:border-vert-profond"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-ligne hover:border-bleu-roi"
             >
               ‹
             </button>
@@ -32,7 +32,7 @@ export function ProductCarousel({ title, seeAllHref, products }: { title: string
               type="button"
               aria-label="Suivant"
               onClick={() => scrollBy(360)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-ligne hover:border-vert-profond"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-ligne hover:border-bleu-roi"
             >
               ›
             </button>

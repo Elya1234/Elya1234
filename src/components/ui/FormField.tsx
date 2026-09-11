@@ -18,7 +18,7 @@ export function FormField(props: InputProps | TextareaProps) {
 
   const fieldClasses = cx(
     "peer w-full min-h-[52px] border bg-white px-4 pt-5 pb-2 text-base outline-none transition-colors placeholder:text-transparent",
-    error ? "border-red-700" : "border-ligne focus:border-vert-profond",
+    error ? "border-red-700" : "border-ligne focus:border-bleu-roi",
     className,
   );
 

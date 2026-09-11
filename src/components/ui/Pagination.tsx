@@ -29,7 +29,7 @@ export function Pagination({
           aria-current={p === currentPage ? "page" : undefined}
           className={cx(
             "flex h-11 w-11 items-center justify-center text-sm",
-            p === currentPage ? "bg-vert-profond text-white" : "hover:underline",
+            p === currentPage ? "bg-bleu-roi text-white" : "hover:underline",
           )}
         >
           {p}

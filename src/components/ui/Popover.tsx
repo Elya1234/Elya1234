@@ -41,7 +41,7 @@ export function Popover({
         onClick={() => setOpen((o) => !o)}
         className={cx(
           "flex min-h-[44px] items-center gap-1.5 border-b-2 px-1 text-xs uppercase tracking-[0.08em] transition-colors",
-          active || open ? "border-vert-profond text-vert-profond" : "border-transparent text-noir-texte hover:text-vert-profond",
+          active || open ? "border-bleu-roi text-bleu-roi" : "border-transparent text-noir-texte hover:text-bleu-roi",
         )}
       >
         {label}

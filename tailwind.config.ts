@@ -16,9 +16,10 @@ const config: Config = {
     },
     extend: {
       colors: {
-        "vert-profond": "#0E3B2E",
-        "vert-sauge": "#7C8C6E",
-        "vert-sauge-texte": "#5D6B52",
+        "bleu-roi": "#1A2A63",
+        "orange-rose": "#F3B79B",
+        "orange-rose-texte": "#A8502E",
+        dore: "#C9A85C",
         ivoire: "#FAF8F5",
         "gris-produit": "#F2F1EF",
         "noir-texte": "#1A1A1A",

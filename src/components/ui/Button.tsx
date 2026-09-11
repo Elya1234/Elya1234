@@ -6,12 +6,12 @@ type Variant = "primary" | "secondary" | "text";
 type Size = "md" | "sm";
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-sans uppercase tracking-[0.1em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vert-profond";
+  "inline-flex items-center justify-center gap-2 font-sans uppercase tracking-[0.1em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bleu-roi";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-vert-profond text-white hover:bg-[#0a2e23] border border-vert-profond",
-  secondary: "bg-transparent text-vert-profond border border-vert-profond hover:bg-vert-profond hover:text-white",
-  text: "bg-transparent text-noir-texte underline underline-offset-4 decoration-1 hover:text-vert-profond p-0 normal-case tracking-normal",
+  primary: "bg-bleu-roi text-white hover:bg-[#0a2e23] border border-bleu-roi",
+  secondary: "bg-transparent text-bleu-roi border border-bleu-roi hover:bg-bleu-roi hover:text-white",
+  text: "bg-transparent text-noir-texte underline underline-offset-4 decoration-1 hover:text-bleu-roi p-0 normal-case tracking-normal",
 };
 
 const sizes: Record<Size, string> = {

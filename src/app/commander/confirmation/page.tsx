@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 export default function ConfirmationPage() {
   return (
     <div className="mx-auto max-w-lg px-4 py-24 text-center lg:px-12">
-      <p aria-hidden="true" className="mb-4 text-4xl text-vert-profond">
+      <p aria-hidden="true" className="mb-4 text-4xl text-bleu-roi">
         ✓
       </p>
       <h1 className="font-serif text-3xl">Merci pour votre commande</h1>

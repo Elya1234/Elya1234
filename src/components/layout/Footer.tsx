@@ -43,7 +43,7 @@ export function Footer() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <footer className="bg-vert-profond text-white">
+    <footer className="bg-bleu-roi text-white">
       <div className="mx-auto max-w-container px-4 py-14 lg:px-12 lg:py-20">
         <div className="mb-12 grid gap-8 lg:hidden">
           {columns.map((col, i) => (
